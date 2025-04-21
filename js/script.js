@@ -30,11 +30,15 @@ function createUserCard(user) {
   const name = document.createElement("h2");
   name.textContent = user.name;
 
+  const bio = document.createElement("h3");
+  bio.textContent = user.bio;
+
   const login = document.createElement("p");
   login.textContent = `@${user.login}`;
 
   card.appendChild(avatar);
   card.appendChild(name);
+  card.appendChild(bio);
   card.appendChild(login);
 
   app.appendChild(card);
