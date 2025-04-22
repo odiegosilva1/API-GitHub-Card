@@ -1,35 +1,175 @@
+/* ===== RESET BÁSICO ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Cores do GitHub Dark Theme */
+  --bg-color: #232427f8;
+  --card-bg: #161b22;
+  --text-color: #c9d1d9;
+  --text-secondary: #8b949e;
+  --border-color: #30363d;
+  --shadow-color: rgba(1, 4, 9, 0.8);
+  --accent-color: #58a6ff;
+}
+
+/* ===== ESTILOS GERAIS ===== */
 body {
   margin: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  line-height: 1.5;
 }
+
+/* ===== CARD PRINCIPAL ===== */
 .card {
-  width: 300px;
-  margin: 20px auto;
-  padding: 1rem;
-  border: 1px solid #dddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 24rem; /* 384px */
+  margin: 1.25rem auto;
+  padding: 1.5rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.5rem 1rem var(--shadow-color);
   text-align: center;
-  font-family: monospace;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.75rem 1.5rem var(--shadow-color);
 }
 
 .card img {
-  width: 100px;
-  height: 100px;
+  width: 8rem; /* Tamanho base */
+  height: 8rem;
   border-radius: 50%;
-  border-bottom: 10px;
+  margin-bottom: 1rem;
+  border: 3px solid var(--border-color);
+  object-fit: cover;
 }
 
 .card h2 {
-  margin: 10px 0;
-  font-size: 20px;
+  margin: 1rem 0;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 1.5rem; /* Tamanho base */
 }
 
 .card p {
-  margin: 0.5rem;
-  color: darkgray;
+  margin: 0.75rem 0;
+  color: var(--text-secondary);
+  font-size: 1rem; /* Tamanho base */
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Dispositivos móveis pequenos (até 360px) */
+@media (max-width: 22.5rem) {
+  /* 360px */
+  .card {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .card img {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .card h2 {
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    font-size: 0.875rem;
+  }
+}
+
+/* Dispositivos móveis médios (361px a 480px) */
+@media (min-width: 22.5625rem) and (max-width: 30rem) {
+  /* 361px a 480px */
+  .card img {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .card h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Tablets (481px a 768px) */
+@media (min-width: 30.0625rem) and (max-width: 48rem) {
+  /* 481px a 768px */
+  .card {
+    width: 70%;
+    max-width: 28rem;
+    padding: 1.75rem;
+  }
+
+  .card img {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .card h2 {
+    font-size: 1.6rem;
+  }
+
+  .card p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop pequeno (769px a 1024px) */
+@media (min-width: 48.0625rem) and (max-width: 64rem) {
+  /* 769px a 1024px */
+  .card {
+    width: 22rem;
+  }
+
+  .card img {
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .card h2 {
+    font-size: 1.75rem;
+  }
+
+  .card p {
+    font-size: 1.125rem;
+  }
+}
+
+/* Desktop grande (acima de 1025px) */
+@media (min-width: 64.0625rem) {
+  /* acima de 1025px */
+  .card {
+    width: 26rem;
+    padding: 2rem;
+  }
+
+  .card img {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .card h2 {
+    font-size: 2rem;
+  }
+
+  .card p {
+    font-size: 1.25rem;
+  }
 }
